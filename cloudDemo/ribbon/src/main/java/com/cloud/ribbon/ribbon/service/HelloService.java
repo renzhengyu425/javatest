@@ -7,6 +7,6 @@ public class HelloService
 {
     public String sayHello()
     {
-        return "你的名字？？？";//这是第一个测试
+        return "你的名字？";//这是第一个测试
     }
 }
