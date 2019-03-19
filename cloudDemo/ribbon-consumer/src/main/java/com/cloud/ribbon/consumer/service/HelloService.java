@@ -12,7 +12,7 @@ public class HelloService
 
     public String sayHello()
     {
-//        return "你的名字？？？";//这是第一个测试
+//        return "你的名字？？？!!!!";//这是第一个测试
         //通过rest调用 调用provider服务
         return restTemplate.getForObject("http://ribbon-provider/hello?name=renlei&age=28", String.class);
     }
