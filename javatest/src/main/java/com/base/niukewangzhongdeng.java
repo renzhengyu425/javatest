@@ -3,6 +3,7 @@ package com.base;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class niukewangzhongdeng {
@@ -10,6 +11,50 @@ public class niukewangzhongdeng {
     public static void main(String[] args) {
         CubicRoot();
 //        System.out.println(getCube(216));
+    }
+
+    public static void Hj14zifuchuanpaixu(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        int count = Integer.parseInt(bf.readLine());
+        String[] result = new String[count];
+        for (int i = 0; i < count; i++) {
+            result[i] = bf.readLine();
+        }
+        StringBuilder sb = new StringBuilder();
+        Arrays.sort(result);
+        for (String w : result) {
+            sb.append(w).append('\n');
+        }
+        System.out.println(sb.toString());
+    }
+
+    public static void Hj26zifuchuanpaixu() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s;
+        while ((s = br.readLine()) != null) {
+            char[] ch = s.toCharArray();
+            char[] chars = new char[ch.length];
+            int flag = 'A', j = 0;
+            while (flag <= 'Z') {
+                for (int i = 0; i < ch.length; i++) {
+                    if ((ch[i] >= 'A' && ch[i] <= 'Z') || (ch[i] >= 'a' && ch[i] <= 'z')) {
+                        if (ch[i] == flag || ch[i] == flag + 32) {
+                            chars[j] = ch[i];
+                            j++;
+                        }
+                    }
+                }
+                flag++;
+            }
+            j = 0;
+            for (int i = 0; i < ch.length; i++) {
+                if ((ch[i] >= 'A' && ch[i] <= 'Z') || (ch[i] >= 'a' && ch[i] <= 'z')) {
+                    ch[i] = chars[j];
+                    j++;
+                }
+            }
+            System.out.println(String.valueOf(ch));
+        }
     }
 
     public static void panduanipv4() throws IOException {
